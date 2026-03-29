@@ -67,7 +67,7 @@ const createUser = async (userData) => {
     }
 }
 
-// write a function that will edit an existin user data entry based on given data
+// write a function that will edit an existing user data entry based on given data
 // everything that has to do with our database requires async/await
 const updateUser = async (userId, userData) => {
 

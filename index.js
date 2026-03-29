@@ -25,6 +25,10 @@ const connectToMongoDB = require("./database/connectToMongoDB")
 const usersRouter = require("./routes/users-router")
 app.use("/api/v1/users", usersRouter)
 
+// import and use the event router
+const eventsRouter = require("./routes/events-router")
+app.use("/api/v1/events", eventsRouter)
+
 // set up the port
 const PORT = 3000;
 
