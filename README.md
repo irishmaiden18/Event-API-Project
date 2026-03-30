@@ -50,18 +50,18 @@ GET /events?category=conference&minPrice=10&maxPrice=100&startDate=2025-01-01&so
 
 ### Bookings
 
-- Users can book tickets for events
-- Fields:
+- DONE--Users can book tickets for events
+- DONE--Fields:
   - `user` *(reference to User)*
   - `event` *(reference to Event)*
   - `quantity` *(number)*
   - `totalPrice` *(calculated from event price and quantity)*
   - `status` *("confirmed", "cancelled")*
 - Endpoints should allow:
-  - Creating a booking
+  -DONE-- Creating a booking
   - Updating or cancelling a booking
   - Viewing all bookings for a user
-- Decrease available tickets when a booking is made
+-DONE-- Decrease available tickets when a booking is made
 
 ---
 
