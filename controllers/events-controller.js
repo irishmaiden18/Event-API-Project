@@ -6,7 +6,7 @@ const Event = require("../models/events-model");
 const getAllEvents = async () => {
 
     try {
-        
+
         // get a list of all the events
         const events = await Event.find()
 
