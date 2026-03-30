@@ -29,6 +29,10 @@ app.use("/api/v1/users", usersRouter)
 const eventsRouter = require("./routes/events-router")
 app.use("/api/v1/events", eventsRouter)
 
+// import and use the bookings router
+const bookingsRouter = require("./routes/bookings-router")
+app.use("/api/v1/bookings", bookingsRouter)
+
 // set up the port
 const PORT = 3000;
 

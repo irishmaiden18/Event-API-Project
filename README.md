@@ -17,8 +17,8 @@ You will:
 
 ### Events
 
-- CRUD operations
-- Fields:
+- DONE--CRUD operations
+- DONE--Fields:
   - `title` *(string)*
   - `description` *(string)*
   - `date` *(date)*
@@ -40,8 +40,8 @@ GET /events?category=conference&minPrice=10&maxPrice=100&startDate=2025-01-01&so
 
 ### Users
 
-- CRUD operations
-- Fields:
+- DONE--CRUD operations
+- DONE--Fields:
   - `name` *(string)*
   - `email` *(string)*
   - `phone` *(string)*

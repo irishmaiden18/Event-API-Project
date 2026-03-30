@@ -1,6 +1,7 @@
 // import mongoose
 const mongoose = require("mongoose")
 
+// create an events schema
 const eventSchema = new mongoose.Schema (
     {
         title: {
@@ -29,7 +30,7 @@ const eventSchema = new mongoose.Schema (
             default: 0,
             min: 0
         },
-        availableTicketes: {
+        availableTickets: {
             type: Number,
             default: 100,
             min: 0
