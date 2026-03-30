@@ -54,7 +54,7 @@ router.get("/:id", async (req, res) => {
         // send a failure response to the user
         res.status(404).json ({
             message: "failure",
-            paylod: error.message
+            paylod: "Can't get user by ID"
         })
     }
 })
