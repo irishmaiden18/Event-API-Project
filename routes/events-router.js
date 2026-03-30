@@ -54,7 +54,7 @@ router.get("/:id", async (req, res) => {
         // send a failure response to the user
         res.status(404).json ({
             message: "failure",
-            paylod: "Can't get user by ID"
+            paylod: "Can't get event by ID"
         })
     }
 })
