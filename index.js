@@ -33,6 +33,12 @@ app.use("/api/v1/events", eventsRouter)
 const bookingsRouter = require("./routes/bookings-router")
 app.use("/api/v1/bookings", bookingsRouter)
 
+/* still work on: stretch goals
+- when returning bookings, populate the event and user fields with the proper information
+- add a route in users router that will return all of the events booked by a single user (like movies and reviews)
+- add an update route for booking specifically designed to cancel their attendance
+*/
+
 // set up the port
 const PORT = 3000;
 
