@@ -72,6 +72,3 @@ GET /events?category=conference&minPrice=10&maxPrice=100&startDate=2025-01-01&so
 - Use `.populate()` where appropriate to return related data
 
 ---
-
-
-411

@@ -1,14 +1,56 @@
 // import the Events model
 const Event = require("../models/events-model");
 
-// write a function that will return all events
+// write a function that will return events based on queries
 // everything that has to do with our database requires async/await
-const getAllEvents = async () => {
+// queryData = req.query
+// in router we will call getAllEvents with the query data like so:
+// getAllEvents(req.query)
+const getAllEvents = async (queryData) => {
 
     try {
 
-        // get a list of all the events
-        const events = await Event.find()
+        /*
+            queryData example: 
+            {
+                category: "concert"
+                date: "05-10-26",
+            }              
+        */
+        //Object that will keep track of our filter queries
+        const filterObject = {}
+
+        // filter based on category
+        // check whether the category query data exists
+        // if it does
+        if (queryData.category) {
+
+            // add it to our filterObject
+            filterObject.category = queryData.category
+        }
+
+        // filter based on date
+        // check whether the date query data exists
+        // if it does
+        if (queryData.date) {
+
+            // add it to our filterObject
+            filterObject.date = queryData.date
+        }
+
+        // filter based on price
+        // deal with a range, getting everything between minprice and maxprice
+
+        // add to our filterObject
+        filterObject.price = {
+            // greater than or equal to queryData.minprice if it exists, if it doesn't use zero
+            $gte: queryData.minPrice || 0,
+            // and less than or equal to queryData.maxprice if it exists, if it doesn't, default to infinity
+            $lte: queryData.maxPrice || Infinity
+        }
+
+        // get a list of the events filtered on the properties of filterObject, if there are no properties we get them all
+        const events = await Event.find(filterObject)
 
         // return all the events
         return events

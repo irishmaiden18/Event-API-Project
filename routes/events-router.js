@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
     try {
     
         // call the getAllEvents events-controller function
-        const allEvents = await getAllEvents()
+        const allEvents = await getAllEvents(req.query)
 
         // send a success response to the user
         res.json ({
