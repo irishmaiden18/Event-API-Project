@@ -49,8 +49,20 @@ const getAllEvents = async (queryData) => {
             $lte: queryData.maxPrice || Infinity
         }
 
+        // sorting with mongodb
+        // {propertyToSortBy: sortOrder}
+        // use a sort object, like filter object
+        const sortObject = {}
+
+        // should look something like this: {title: "desc"}
+        // sortObject[queryData.sortBy]
+        // first, evaulate queryData.sortBy
+        // sortObject["title"] - same as sortObject.title
+        // uses default sortby id and sort order of ascending
+        sortObject[queryData.sortBy || "title"] = queryData.sortOrder || "asc" 
+
         // get a list of the events filtered on the properties of filterObject, if there are no properties we get them all
-        const events = await Event.find(filterObject)
+        const events = await Event.find(filterObject).sort(sortObject)
 
         // return all the events
         return events
