@@ -17,7 +17,7 @@ const getAllEvents = async (queryData) => {
                 date: "05-10-26",
             }              
         */
-        //Object that will keep track of our filter queries
+        // Object that will keep track of our filter queries
         const filterObject = {}
 
         // filter based on category
